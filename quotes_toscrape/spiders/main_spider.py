@@ -22,3 +22,8 @@ class MainSpiderSpider(scrapy.Spider):
                 'Author': author,
                 'Tags': tags
             }
+
+        next_page_url = response.xpath('//li[@class="next"]/a/@href').extract_first()   # Store the @href value of the 'next' button
+        if next_page_url:                                                               # If next_page_url exists...
+            next_page_absolute_url = 'http://quotes.toscrape.com/' + next_page_url                    # Join 'quotes.toscrape.com' and relative path
+            yield scrapy.Request(next_page_absolute_url, self.parse)                    # Make a request to the server for the next page
