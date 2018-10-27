@@ -2,7 +2,12 @@
 Created for my Scrapy tutorial, a Scrapy bot that scrapes quotes from quotes.toscrape.com
 
 ## Getting Started
-These instructions will tell you how to download, run and use this project:
+Before anything, I have several branches to select for. Each branch has a different use. You can select from:
+
+master - Original and baseline branch
+basic_spider - Scrapes the initial page from quotes.toscrape.com
+next_page_spider - From the 'basic_spider', no paginates over all the pages
+details_spider - Paginates quotes.toscrape.com, getting the details of every quote navigating to the author's page
 
 ### Installing
 
