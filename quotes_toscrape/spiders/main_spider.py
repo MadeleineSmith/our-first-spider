@@ -14,7 +14,7 @@ class MainSpiderSpider(scrapy.Spider):
 
         for quote in quotes:
             text = quote.xpath('./span[@class="text"]/text()').extract_first()
-            author = quotes.xpath('.//small[@class="author"]/text()').extract_first()
+            author = quote.xpath('.//small[@class="author"]/text()').extract_first()
             tags = quote.xpath('.//div[@class="tags"]/a/text()').extract()
 
             yield {
